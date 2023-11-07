@@ -1,5 +1,6 @@
 import { db } from "../database/database.connection.js";
 
+//Acesso ao banco de dados na tabela users
 async function verifyUser(email){
     const user = await db.query(`SELECT * FROM users WHERE email = $1;`, [email]);
     return user

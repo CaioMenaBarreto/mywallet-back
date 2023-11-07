@@ -1,6 +1,7 @@
 import { badRequestError } from "../errors/badRequestError.js";
 
-// Função que verifica o corpo da requisição enviada pelo front e confere se todos os dados estão presentes e no formato esperado 
+// Função que verifica o corpo da requisição enviada pelo front e confere se todos os dados estão presentes 
+// e no formato esperado utilizando os schemas criados com a biblioteca Joi
 function schemaValidation(schema) {
     return (req, res, next) => {
         const validation = schema.validate(req.body, { abortEarly: false });

@@ -1,9 +1,11 @@
 import { Router } from "express";
 import authRouter from "./authRouter.js";
+import transactionRouter from "./transactionRouter.js";
 
 //Aqui utilizamos um índice para que todas as rotas sejam chamadas aqui e no app.js apenas a váriavel "router" seja utilizada
-const router = Router();
+const index = Router();
 
-router.use(authRouter);
+index.use(authRouter);
+index.use(transactionRouter);
 
-export default router;
+export default index;

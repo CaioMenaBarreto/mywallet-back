@@ -3,7 +3,7 @@ import express from "express";
 import "express-async-errors";
 import cors from "cors";
 import dotenv from "dotenv";
-import router from "./routers/indexRouter.js";
+import index from "./routers/indexRouter.js";
 import errorMiddleware from "./middlewares/errorValidation.js";
 
 // Configurando a aplicação para utilizar o express e o dotenv
@@ -13,7 +13,7 @@ dotenv.config();
 // Utilizando o express, cors, router e o middleware de erros
 app.use(express.json());
 app.use(cors());
-app.use(router);
+app.use(index);
 app.use(errorMiddleware);
 
 // Configurando a porta para uma possível váriavel de porta no aquivo .env, se essa váriavel de ambiente não existir roda automaticamente na porta 5000 
