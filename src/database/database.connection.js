@@ -8,8 +8,10 @@ const { Pool } = pg;
 const configDatabase = {
     connectionString: process.env.DATABASE_URL,
 };
-console.log('Conexão com o banco de dados bem sucedida!');
 
+if (process.env.NODE_ENV === "production") configDatabase.ssl = true;
+
+console.log('Conexão com o banco de dados bem sucedida!');
 
 // Exportando váriavel que permite conxão com o banco de dados
 export const db = new Pool(configDatabase);
