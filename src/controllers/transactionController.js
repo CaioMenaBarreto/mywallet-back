@@ -28,3 +28,14 @@ export async function deleteTransaction(req, res) {
 
     res.sendStatus(httpStatus.ACCEPTED);
 }
+
+export async function editTransaction(req, res) {
+    const { id } = req.params
+    const { value, description } = req.body
+    const sessions = res.locals.session
+    const userId = sessions.userId;
+
+    await transactionService.editTransaction(id, value, description, userId);
+
+    res.sendStatus(httpStatus.ACCEPTED);
+}

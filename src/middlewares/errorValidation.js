@@ -11,6 +11,6 @@ export default function errorMiddleware(error, req, res, next){
     if (error.name === "unauthorizedError") return res.status(httpStatus.UNAUTHORIZED).send(error.message);
     if (error.message === "Faça o login para acessar a sua carteira.") return res.status(httpStatus.UNAUTHORIZED).send(error.message);
 
-    console.log(error.message);
+    console.log(error);
     return res.sendStatus(httpStatus.INTERNAL_SERVER_ERROR).send(error.message);
 }

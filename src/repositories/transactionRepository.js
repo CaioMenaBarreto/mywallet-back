@@ -15,10 +15,16 @@ async function deleteTransaction(id, userId) {
     return await db.query(`DELETE FROM transactions WHERE id = $1 AND "userId" = $2`, [id, userId]);
 }
 
+async function editTransaction(value, description, id, userId){
+    const result = await db.query(`UPDATE transactions SET value = $1, 
+    description = $2 WHERE id = $3 AND "userId" = $4;`, [value, description, id, userId]);
+    return result;
+}
 
 
 export const transactionRepository = {
     getTransactions,
     postTransactions,
-    deleteTransaction
+    deleteTransaction,
+    editTransaction
 }
