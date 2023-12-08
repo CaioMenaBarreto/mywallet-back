@@ -1,4 +1,3 @@
-// Função chamada quando a senha está incorreta
 export function noHaveToken() {
     return {
         name: 'unauthorizedError',
