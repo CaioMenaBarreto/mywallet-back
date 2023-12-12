@@ -29,7 +29,7 @@ Se a estrutura não for respeitada, um erro 422 é retornado e se os dados infor
  - Realiza o cadastro do usuário desde que as informações passadas sejam de um usuário não cadastrado anteriormente. A estrutura esperada para o login é:
 ```
 {
-    name: string;
+    	name: string;
 	email: string;
 	password: string
 }
@@ -47,7 +47,7 @@ A estrutura esperada para uma transação é:
 {
 	value: number;
 	description: string;
-    type: string.
+    	type: string.
 }
 ```
 Se a estrutura não for respeitada, um erro 422 é retornado.
@@ -63,7 +63,7 @@ Se a estrutura não for respeitada, um erro 422 é retornado.
 {
 	value: number;
 	description: string;
-    type: string.
+    	type: string.
 }
 ```
 
